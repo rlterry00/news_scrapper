@@ -8,6 +8,7 @@ var mongojs = require("mongojs");
 
 var databaseUrl = "newsscrapperdb";
 var collections = ["comments"];
+var PORT = process.env.PORT
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
@@ -290,8 +291,13 @@ app.get("/clearall", function(req, res) {
   });
 });
 
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
 
-app.listen(); 
-// function() {
+
+
+// app.listen(3000, function() {
 //   console.log("App running on port 3000!");
 // });
