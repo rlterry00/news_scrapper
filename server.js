@@ -8,11 +8,10 @@ var mongojs = require("mongojs");
 
 var databaseUrl = "newsscrapperdb";
 var collections = ["comments"];
-var PORT = process.env.PORT;
-
+c
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
-
+var PORT = process.env.PORT || 8080;
 // Log any mongojs errors to console
 db.on("error", function(error) {
   console.log("Database Error:", error);
