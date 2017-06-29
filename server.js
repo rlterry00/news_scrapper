@@ -8,7 +8,7 @@ var mongojs = require("mongojs");
 
 var databaseUrl = "newsscrapperdb";
 var collections = ["comments"];
-var PORT = process.env.PORT
+var PORT = process.env.PORT;
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
