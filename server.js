@@ -8,7 +8,7 @@ var mongojs = require("mongojs");
 
 var databaseUrl = "newsscrapperdb";
 var collections = ["comments"];
-c
+
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
 var PORT = process.env.PORT || 8080;
@@ -92,7 +92,7 @@ app.get("/scrape", function(req, res) {
     });
   });
   // // Tell the browser that we finished scraping the text
-  res.send(index.html);
+  res.send("scrape complete");
 });
 
 app.get("/articles", function(req, res) {
@@ -293,7 +293,7 @@ app.get("/clearall", function(req, res) {
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-});
+
 
 
 
